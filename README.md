@@ -25,12 +25,16 @@ Ticketify uses a number of open source projects to work properly:
 And of course Ticketify itself is open source with a [public repository](https://github.com/vexra/OOP/tree/master/Netbeans/Booking)
  on GitHub.
  
+## Development
+
+To develop this project you need JDBC and Java Fx configured
+ 
 ## Deployment
 
-To deploy this project you need to create booking database
+To deploy this project you need to create ticketify database
 
 ```sql
-  CREATE DATABASE booking;
+  CREATE DATABASE ticketify;
 ```
 
 ## Author
