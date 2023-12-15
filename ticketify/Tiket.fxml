@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="tiketfy.TiketController">
+   <children>
+      <Text layoutX="249.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIKET">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnKonser" layoutX="216.0" layoutY="146.0" mnemonicParsing="false" onAction="#daftarTiketKonser" prefHeight="41.0" prefWidth="198.0" text="Konser">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnTransportasi" layoutX="175.0" layoutY="216.0" mnemonicParsing="false" onAction="#daftarTiketTransportasi" prefHeight="46.0" prefWidth="281.0" text="Tranportasi">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
