@@ -1,39 +1,26 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ */
 package ticketify;
 
-import java.io.IOException;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.Initializable;
 
-public class LoginController {
+/**
+ * FXML Controller class
+ *
+ * @author user
+ */
+public class LoginController implements Initializable {
 
-    @FXML
-    private Button btnAdmin;
-
-    @FXML
-    private Button btnUSER;
-
-    @FXML
-    void pergiKeAdmin(ActionEvent event) {
-
-    }
-
-    @FXML
-    void pergiKeTiket(ActionEvent event) throws IOException {
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("Tiket.fxml"));
-    Parent root = loader.load();
-
-    TiketController tiketController = loader.getController();
-
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
     
-    tiketController.setBtnUser(btnUSER);
-
-    Stage stage = (Stage) btnUSER.getScene().getWindow();
-    stage.setScene(new Scene(root));    
-    }
-
 }
