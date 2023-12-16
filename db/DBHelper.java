@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 public class DBHelper {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "";
-    private static final String DB = "booking-app";
+    private static final String DB = "ticketify";
     private static final String MYCONN = "jdbc:mysql://localhost/"+DB;
 
     public static Connection getConnection(){
