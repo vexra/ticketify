@@ -9,7 +9,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import components.Tiket;
-import components.Tiket;
 import db.DBHelper;
 
 public class TiketModel {

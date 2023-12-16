@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 
 import db.DBHelper;
 import components.Acara;
-import components.Acara;
 
 import java.time.LocalDateTime;
 
