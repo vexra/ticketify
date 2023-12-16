@@ -10,6 +10,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.AcaraModel;
+import model.PelangganModel;
+import model.PembayaranModel;
+import model.TiketModel;
 
 /**
  *
@@ -31,6 +35,15 @@ public class Ticketify extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        seedDB();
         launch(args);
     }    
+    
+    private static void seedDB() {
+        AcaraModel.seedAcaraTable();
+        PelangganModel.seedPelangganTable();
+        PembayaranModel.seedPembayaranTable();
+        TiketModel.seedTiketTable();
+    }
+
 }

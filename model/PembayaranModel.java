@@ -35,7 +35,7 @@ public class PembayaranModel {
                                             "kode_unik VARCHAR(3)," +
                                             "metode_pembayaran VARCHAR(255)," +
                                             "status_pembayaran VARCHAR(255)," +
-                                            "FOREIGN KEY (id_pelanggan) REFERENCES Pelanggan(id_pelanggan)" +
+                                            "FOREIGN KEY (id_pelanggan) REFERENCES Pelanggan(id_pelanggan)," +
                                             "FOREIGN KEY (id_tiket) REFERENCES Tiket(id_tiket)" +
                                         ")";
             stmt.executeUpdate(createPembayaranTable);
