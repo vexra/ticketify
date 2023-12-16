@@ -1,5 +1,7 @@
 package model;
 
+import components.Acara;
+import db.DBHelper;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,27 +9,17 @@ import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import db.DBHelper;
-import components.Acara;
-
 public class AcaraModel {
-    private final Connection CONN;
-
-    public AcaraModel() {
-        this.CONN = DBHelper.getConnection();
-    }
+    private static final Connection CONN = DBHelper.getConnection();
 
     public static void seedAcaraTable() {
-        Connection conn = DBHelper.getConnection();
-
         Statement stmt = null;
 
         try {
-            stmt = conn.createStatement();
+            stmt = CONN.createStatement();
 
             // Membuat tabel Acara
             String createAcaraTable = "CREATE TABLE IF NOT EXISTS Acara (" +
@@ -47,8 +39,8 @@ public class AcaraModel {
                 if (stmt != null) {
                     stmt.close();
                 }
-                if (conn != null) {
-                    conn.close();
+                if (CONN != null) {
+                    CONN.close();
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
@@ -56,7 +48,7 @@ public class AcaraModel {
         }
     }
 
-    public void addAcara(Acara acara) {
+    public static void addAcara(Acara acara) {
         String insert = "INSERT INTO `Acara` (nama_acara, jenis_acara, tanggal_acara, lokasi_acara) VALUES ('" + acara.getNama() + "','" + acara.getJenis() + "','" + acara.getTanggal() + "','" + acara.getLokasi() + "')";
         System.out.println(insert);
         
@@ -72,7 +64,7 @@ public class AcaraModel {
         }
     }
     
-    public ObservableList<Acara> getAcara(String kt) {
+    public static ObservableList<Acara> getAcara(String kt) {
         char c = '%';
         String query = String.format("SELECT * FROM `acara` WHERE IF('%s' = 'both', jenis_acara LIKE '%c', IF('%s' = 'konser', jenis_acara = 'konser',0)) OR IF('%s' = 'transportasi', jenis_acara != 'konser',0 );",kt,c,kt,kt);
         ObservableList<Acara> listAcara = FXCollections.observableArrayList();
@@ -91,7 +83,7 @@ public class AcaraModel {
         return listAcara;
     }
     
-    public Acara getAcaraById(int id) {
+    public static Acara getAcaraById(int id) {
         String query = "SELECT * FROM `Acara` WHERE id_acara='" + id + "'";
         Acara acara = null;
         
@@ -108,7 +100,7 @@ public class AcaraModel {
         return acara;
     }
 
-    public void updateAcara(int id, Acara acara) {
+    public static void updateAcara(int id, Acara acara) {
         String update = "UPDATE `acara` SET `nama_acara`='" + acara.getNama() + "',`jenis_acara`='" + acara.getJenis() + "',`tanggal_acara`='" + acara.getTanggal() + "',`lokasi_acara`='" + acara.getLokasi() + "' WHERE id_acara='" + id + "'";
         System.out.println(update);
         
@@ -124,7 +116,7 @@ public class AcaraModel {
         }
     }
     
-    public void deleteAcara(int id) {
+    public static void deleteAcara(int id) {
         String delete = "DELETE FROM `Acara` WHERE id_acara='" + id + "'";
         System.out.println(delete);
         

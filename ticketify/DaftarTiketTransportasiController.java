@@ -63,10 +63,7 @@ public class DaftarTiketTransportasiController implements Initializable {
     }
     
     public void showAcara() throws SQLException{
-//        ObservableList<Acara> acr = getDataAcara();
-        AcaraModel acaraModel = new AcaraModel();
-
-        ObservableList<Acara> arr = acaraModel.getAcara("transportasi");
+        ObservableList<Acara> arr = AcaraModel.getAcara("transportasi");
         
         nama.setCellValueFactory(new PropertyValueFactory<>("Nama"));
         jadwal.setCellValueFactory(new PropertyValueFactory<>("Tanggal"));

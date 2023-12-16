@@ -71,10 +71,7 @@ public class DaftarPembelianController implements Initializable{
     }
     
     public void showAcara() throws SQLException{
-//        ObservableList<Acara> acr = getDataAcara();
-        AcaraModel acaraModel = new AcaraModel();
-
-        ObservableList<Acara> arr = acaraModel.getAcara("both");
+        ObservableList<Acara> arr = AcaraModel.getAcara("both");
 
         colKet.setCellValueFactory(new PropertyValueFactory<>("Nama"));
         listPembelian.setItems(arr);        

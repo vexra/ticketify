@@ -1,5 +1,7 @@
 package model;
 
+import components.Pembayaran;
+import db.DBHelper;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,15 +10,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import components.Pembayaran;
-import db.DBHelper;
-
 public class PembayaranModel {
-    private final Connection CONN;
-
-    public PembayaranModel() {
-        this.CONN = DBHelper.getConnection();
-    }
+    private static final Connection CONN = DBHelper.getConnection();
 
     public static void seedPembayaranTable() {
         Connection conn = DBHelper.getConnection();
@@ -57,7 +52,7 @@ public class PembayaranModel {
         }
     }
 
-    public void addPembayaran(Pembayaran pembayaran) {
+    public static void addPembayaran(Pembayaran pembayaran) {
         String insert = "INSERT INTO `Pembayaran` (id_pelanggan, id_tiket, total_biaya, kode_unik, metode_pembayaran, status_pembayaran) VALUES (" + pembayaran.getPelanggan().getId() + "," + pembayaran.getTiket().getId() + "," + pembayaran.getTotalBiaya() + ",'" + pembayaran.getKodeUnik() + "','" + pembayaran.getMetode() + "','" + pembayaran.getStatus() + "')";
         System.out.println(insert);
         
@@ -73,7 +68,7 @@ public class PembayaranModel {
         }
     }
     
-    public ArrayList<Pembayaran> getPembayaran() {
+    public static ArrayList<Pembayaran> getPembayaran() {
         String query = "SELECT * FROM `Pembayaran`";
         ArrayList<Pembayaran> listPembayaran = new ArrayList<>();
         
@@ -92,7 +87,7 @@ public class PembayaranModel {
         return listPembayaran;
     }
     
-    public void updatePembayaran(int id, Pembayaran pembayaran) {
+    public static void updatePembayaran(int id, Pembayaran pembayaran) {
         String update = "UPDATE `pembayaran` SET `id_pelanggan`=" + pembayaran.getPelanggan().getId() + ",`id_tiket`=" + pembayaran.getTiket().getId() + ",`total_biaya`=" + pembayaran.getTotalBiaya() + ",`kode_unik`='" + pembayaran.getKodeUnik() + "',`metode_pembayaran`='" + pembayaran.getMetode() + "',`status_pembayaran`='" + pembayaran.getStatus() + "' WHERE id_pembayaran='" + id + "'";
         System.out.println(update);
         
@@ -108,7 +103,7 @@ public class PembayaranModel {
         }
     }
     
-    public void deletePembayaran(int id) {
+    public static void deletePembayaran(int id) {
         String delete = "DELETE FROM `Pembayaran` WHERE id_pembayaran='" + id + "'";
         System.out.println(delete);
         

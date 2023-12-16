@@ -1,5 +1,7 @@
 package model;
 
+import components.Tiket;
+import db.DBHelper;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,15 +10,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import components.Tiket;
-import db.DBHelper;
-
 public class TiketModel {
-    private final Connection CONN;
-
-    public TiketModel() {
-        this.CONN = DBHelper.getConnection();
-    }
+    private static final Connection CONN = DBHelper.getConnection();
 
     public static void seedTiketTable() {
         Connection conn = DBHelper.getConnection();
@@ -54,7 +49,7 @@ public class TiketModel {
         }
     }
 
-    public void addTiket(Tiket tiket) {
+    public static void addTiket(Tiket tiket) {
         String insert = "INSERT INTO `Tiket` (id_acara, jenis_tiket, harga_tiket, jumlah_tiket) VALUES (" + tiket.getAcara().getId() + ",'" + tiket.getJenis() + "'," + tiket.getHarga() + "," + tiket.getJumlah() + ")";
         System.out.println(insert);
         
@@ -70,7 +65,7 @@ public class TiketModel {
         }
     }
     
-    public ArrayList<Tiket> getTiket() {
+    public static ArrayList<Tiket> getTiket() {
         String query = "SELECT * FROM `Tiket`";
         ArrayList<Tiket> listTiket = new ArrayList<>();
         
@@ -89,7 +84,7 @@ public class TiketModel {
         return listTiket;
     }
 
-    public Tiket getTiketById(int id) {
+    public static Tiket getTiketById(int id) {
         String query = "SELECT * FROM `Tiket` WHERE id_tiket='" + id + "'";
         Tiket tiket = null;
         
@@ -106,7 +101,7 @@ public class TiketModel {
         return tiket;
     }
     
-    public void updateTiket(int id, Tiket tiket) {
+    public static void updateTiket(int id, Tiket tiket) {
         String update = "UPDATE `tiket` SET `id_acara`=" + tiket.getAcara().getId() + ",`jenis_tiket`='" + tiket.getJenis() + "'',`harga_tiket`=" + tiket.getHarga() + ",`jumlah_tiket`=" + tiket.getJumlah() + "' WHERE id_tiket='" + id + "'";
         System.out.println(update);
         
@@ -122,7 +117,7 @@ public class TiketModel {
         }
     }
     
-    public void deleteTiket(int id) {
+    public static void deleteTiket(int id) {
         String delete = "DELETE FROM `Tiket` WHERE id_tiket='" + id + "'";
         System.out.println(delete);
         

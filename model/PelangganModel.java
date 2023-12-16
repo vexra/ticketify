@@ -1,22 +1,17 @@
 package model;
 
 import components.Pelanggan;
+import db.DBHelper;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import db.DBHelper;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-
 public class PelangganModel {
-    private final Connection CONN;
-
-    public PelangganModel() {
-        this.CONN = DBHelper.getConnection();
-    }
+    private static final Connection CONN = DBHelper.getConnection();
 
     public static void seedPelangganTable() {
         Connection conn = DBHelper.getConnection();
@@ -53,7 +48,7 @@ public class PelangganModel {
         }
     }
     
-    public void addPelanggan(Pelanggan pelanggan) {
+    public static void addPelanggan(Pelanggan pelanggan) {
         String insert = "INSERT INTO `Pelanggan` (nama_pelanggan, email_pelanggan, alamat_pelanggan, no_telepon_pelanggan) VALUES ('" + pelanggan.getNama() + "','" + pelanggan.getEmail() + "','" + pelanggan.getAlamat() + "','" + pelanggan.getTelpon() + "')";
         System.out.println(insert);
         
@@ -69,7 +64,7 @@ public class PelangganModel {
         }
     }
     
-    public ArrayList<Pelanggan> getPelanggan() {
+    public static ArrayList<Pelanggan> getPelanggan() {
         String query = "SELECT * FROM `Pelanggan`";
         ArrayList<Pelanggan> listPelanggan = new ArrayList<>();
         
@@ -88,7 +83,7 @@ public class PelangganModel {
         return listPelanggan;
     }
     
-    public Pelanggan getPelangganById(int id) {
+    public static Pelanggan getPelangganById(int id) {
         String query = "SELECT * FROM `Pelanggan` WHERE id_pelanggan='" + id + "'";
         Pelanggan pelanggan = null;
         
@@ -105,7 +100,7 @@ public class PelangganModel {
         return pelanggan;
     }
     
-    public void updatePelanggan(int id, Pelanggan pelanggan) {
+    public static void updatePelanggan(int id, Pelanggan pelanggan) {
         String update = "UPDATE `pelanggan` SET `nama_pelanggan`='" + pelanggan.getNama() + "',`email_pelanggan`='" + pelanggan.getEmail() + "',`alamat_pelanggan`='" + pelanggan.getAlamat() + "',`no_telepon_pelanggan`='" + pelanggan.getTelpon() + "' WHERE id_pelanggan='" + id + "'";
         System.out.println(update);
         
@@ -121,7 +116,7 @@ public class PelangganModel {
         }
     }
     
-    public void deletePelanggan(int id) {
+    public static void deletePelanggan(int id) {
         String delete = "DELETE FROM `Pelanggan` WHERE id_pelanggan='" + id + "'";
         System.out.println(delete);
         
