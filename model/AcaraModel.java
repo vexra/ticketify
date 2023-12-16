@@ -4,16 +4,15 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import db.DBHelper;
-import components.Acara;
-
-import java.time.LocalDateTime;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import db.DBHelper;
+import components.Acara;
 
 public class AcaraModel {
     private final Connection CONN;
@@ -35,7 +34,7 @@ public class AcaraModel {
                                         "id_acara INT AUTO_INCREMENT PRIMARY KEY," +
                                         "nama_acara VARCHAR(255)," +
                                         "jenis_acara VARCHAR(255)," +
-                                        "tanggal_acara DATE," +
+                                        "tanggal_acara DATETIME," +
                                         "lokasi_acara VARCHAR(255)" +
                                     ")";
             stmt.executeUpdate(createAcaraTable);

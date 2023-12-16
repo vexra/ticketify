@@ -1,29 +1,25 @@
 package ticketify;
 
+import components.Acara;
+import components.Pelanggan;
 import components.Tiket;
-import java.sql.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
-import model.SwitchScene;
-import components.*;
-import java.time.LocalDateTime;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import db.DBHelper;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.scene.control.cell.PropertyValueFactory;
 import model.AcaraModel;
+import model.SwitchScene;
 
 public class DaftarPembelianController implements Initializable{
 
