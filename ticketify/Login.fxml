@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" fx:id="login" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="ticketify.LoginController">
+<AnchorPane id="AnchorPane" fx:id="login" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ticketify.LoginController">
    <children>
-      <Button fx:id="LogUser" layoutX="98.0" layoutY="162.0" mnemonicParsing="false" onAction="#LogUsr" text="USER">
+      <Button fx:id="LogUser" alignment="CENTER" contentDisplay="CENTER" layoutX="212.0" layoutY="229.0" mnemonicParsing="false" onAction="#LogUsr" text="Sign in as User">
          <font>
-            <Font size="36.0" />
+            <Font size="20.0" />
          </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </Button>
-      <Label layoutX="230.0" layoutY="14.0" text="LOGIN">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="218.0" layoutY="118.0" text="Sign In">
          <font>
             <Font size="48.0" />
          </font>
       </Label>
-      <Button fx:id="LogAdm" layoutX="371.0" layoutY="162.0" mnemonicParsing="false" onAction="#logAdmn" text="ADMIN">
+      <Button fx:id="LogAdm" layoutX="203.0" layoutY="285.0" mnemonicParsing="false" onAction="#logAdmn" text="Sign in as Admin">
          <font>
-            <Font size="36.0" />
+            <Font size="20.0" />
          </font>
       </Button>
    </children>
