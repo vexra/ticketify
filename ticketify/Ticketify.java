@@ -22,7 +22,7 @@ public class Ticketify extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         
         Scene scene = new Scene(root);
-        
+        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
     }
@@ -32,6 +32,5 @@ public class Ticketify extends Application {
      */
     public static void main(String[] args) {
         launch(args);
-    }
-    
+    }    
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="menuTiket" fx:id="menuTiket" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="ticketify.MenuTiketController">
+   <children>
+      <Label layoutX="242.0" layoutY="25.0" text="TIKET">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="konser" layoutX="248.0" layoutY="128.0" mnemonicParsing="false" onAction="#konserBtn" text="Konser">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="transportasi" layoutX="219.0" layoutY="214.0" mnemonicParsing="false" onAction="#transportBtn" text="Transportasi">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

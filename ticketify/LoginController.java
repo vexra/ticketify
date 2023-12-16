@@ -1,26 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package ticketify;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import java.io.IOException;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import model.SwitchScene;
+import javafx.scene.layout.AnchorPane;
 
-/**
- * FXML Controller class
- *
- * @author user
- */
-public class LoginController implements Initializable {
+public class LoginController {
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    @FXML
+    private AnchorPane login;
     
+    @FXML
+    private Button LogAdm;
+
+    @FXML
+    private Button LogUser;
+
+    @FXML
+    void LogUsr(ActionEvent event) throws IOException {
+        new SwitchScene(login, "MenuTiket.fxml"); // Ganti Scene
+    }
+
+    @FXML
+    void logAdmn() throws IOException {
+        new SwitchScene(login, "DaftarPembelian.fxml"); // Ganti Scene
+    }
+
 }

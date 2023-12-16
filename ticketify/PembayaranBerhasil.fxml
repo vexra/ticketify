@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" fx:id="pembayaran" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="ticketify.PembayaranBerhasilController">
+   <children>
+      <Label layoutX="102.0" layoutY="138.0" text="PEMBAYARAN TELAH DIKONFIRMASI">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="278.0" layoutY="179.0" text="Selamat!" />
+      <Label layoutX="202.0" layoutY="196.0" text="Pembayaran anda telah dikonfirmasi!" />
+      <Button fx:id="Kembali" layoutX="256.0" layoutY="224.0" mnemonicParsing="false" onAction="#kembali" text="Kembali">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
