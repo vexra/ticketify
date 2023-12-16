@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import model.SwitchScene;
+import utils.UIHelper;
 
 public class MenuTiketController {
 
@@ -23,17 +23,17 @@ public class MenuTiketController {
 
     @FXML
     void konserBtn(ActionEvent event) throws IOException {
-        new SwitchScene(menuTiket, "DaftarTiketKonser.fxml");
+        UIHelper.switchScene(menuTiket, "DaftarTiketKonser.fxml");
     }
 
     @FXML
     void logout(ActionEvent event) throws IOException {
-        new SwitchScene(menuTiket, "Login.fxml");
+        UIHelper.switchScene(menuTiket, "Login.fxml");
     }
 
     @FXML
     void transportBtn(ActionEvent event) throws IOException {
-        new SwitchScene(menuTiket, "DaftarTiketTransportasi.fxml");
+        UIHelper.switchScene(menuTiket, "DaftarTiketTransportasi.fxml");
     }
 
 }

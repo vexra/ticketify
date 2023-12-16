@@ -4,7 +4,7 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import model.SwitchScene;
+import utils.UIHelper;
 import javafx.scene.layout.AnchorPane;
 
 public class LoginController {
@@ -20,12 +20,12 @@ public class LoginController {
 
     @FXML
     void LogUsr(ActionEvent event) throws IOException {
-        new SwitchScene(login, "MenuTiket.fxml"); // Ganti Scene
+        UIHelper.switchScene(login, "MenuTiket.fxml"); // Ganti Scene
     }
 
     @FXML
     void logAdmn() throws IOException {
-        new SwitchScene(login, "DaftarPembelian.fxml"); // Ganti Scene
+        UIHelper.switchScene(login, "DaftarPembelian.fxml"); // Ganti Scene
     }
 
 }

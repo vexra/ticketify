@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import model.SwitchScene;
+import utils.UIHelper;
 
 public class NotifikasiHapusController {
 
@@ -39,7 +39,7 @@ public class NotifikasiHapusController {
 
     @FXML
     void kembali(ActionEvent event) throws IOException {
-        new SwitchScene(notifikasi, "DaftarPembelian.fxml");
+        UIHelper.switchScene(notifikasi, "DaftarPembelian.fxml");
     }
 
 }

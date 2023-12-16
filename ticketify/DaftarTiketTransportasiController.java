@@ -18,7 +18,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import model.AcaraModel;
-import model.SwitchScene;
+import utils.UIHelper;
 
 public class DaftarTiketTransportasiController implements Initializable {
 
@@ -45,12 +45,12 @@ public class DaftarTiketTransportasiController implements Initializable {
 
     @FXML
     void kembali(ActionEvent event) throws IOException {
-        new SwitchScene(daftarTiket, "MenuTiket.fxml");
+        UIHelper.switchScene(daftarTiket, "MenuTiket.fxml");
     }
 
     @FXML
     void pilih(ActionEvent event) throws IOException {
-        new SwitchScene(daftarTiket, "JenisTiketTransportasi.fxml");
+        UIHelper.switchScene(daftarTiket, "JenisTiketTransportasi.fxml");
     }
     
     @Override

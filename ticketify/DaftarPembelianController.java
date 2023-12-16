@@ -19,7 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import model.AcaraModel;
-import model.SwitchScene;
+import utils.UIHelper;
 
 public class DaftarPembelianController implements Initializable{
 
@@ -53,12 +53,12 @@ public class DaftarPembelianController implements Initializable{
 
     @FXML
     void kembali(ActionEvent event) throws IOException {
-        new SwitchScene(daftarPembelian, "login.fxml");
+        UIHelper.switchScene(daftarPembelian, "login.fxml");
     }
     
     @FXML
     void lihat(ActionEvent event) throws IOException {
-        new SwitchScene(daftarPembelian, "KonfirmasiPembelian.fxml");
+        UIHelper.switchScene(daftarPembelian, "KonfirmasiPembelian.fxml");
     }
 
     @Override

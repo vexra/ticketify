@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import model.SwitchScene;
+import utils.UIHelper;
 
 public class JenisTiketTransportasiController {
 
@@ -37,24 +37,24 @@ public class JenisTiketTransportasiController {
     @FXML
     void bisnis(ActionEvent event) throws IOException {
 
-        new SwitchScene(jenisTiket, "PembayaranTransport.fxml");
+        UIHelper.switchScene(jenisTiket, "PembayaranTransport.fxml");
     }
 
     @FXML
     void ekonomi(ActionEvent event) throws IOException {
 
-        new SwitchScene(jenisTiket, "PembayaranTransport.fxml");
+        UIHelper.switchScene(jenisTiket, "PembayaranTransport.fxml");
     }
 
     @FXML
     void eksekutif(ActionEvent event) throws IOException {
 
-        new SwitchScene(jenisTiket, "PembayaranTransport.fxml");
+        UIHelper.switchScene(jenisTiket, "PembayaranTransport.fxml");
     }
 
     @FXML
     void kembali(ActionEvent event) throws IOException {
-        new SwitchScene(jenisTiket, "DaftarTiketKonser.fxml");
+        UIHelper.switchScene(jenisTiket, "DaftarTiketKonser.fxml");
     }
 
 }

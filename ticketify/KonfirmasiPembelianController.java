@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import model.SwitchScene;
+import utils.UIHelper;
 
 public class KonfirmasiPembelianController {
 
@@ -45,17 +45,17 @@ public class KonfirmasiPembelianController {
 
     @FXML
     void hapus(ActionEvent event) throws IOException {
-        new SwitchScene(deskripsi, "NotifikasiHapus.fxml");
+        UIHelper.switchScene(deskripsi, "NotifikasiHapus.fxml");
     }
 
     @FXML
     void konfirmasi(ActionEvent event) throws IOException {
-        new SwitchScene(deskripsi, "NotifikasiKonfirmasi.fxml");
+        UIHelper.switchScene(deskripsi, "NotifikasiKonfirmasi.fxml");
     }
     
     @FXML
     void kembali(ActionEvent event) throws IOException {
-        new SwitchScene(deskripsi, "DaftarPembelian.fxml");
+        UIHelper.switchScene(deskripsi, "DaftarPembelian.fxml");
     }
 
 }

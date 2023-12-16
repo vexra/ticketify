@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import model.SwitchScene;
+import utils.UIHelper;
 
 public class PembayaranController {
 
@@ -46,7 +46,7 @@ public class PembayaranController {
 
     @FXML
     void kembali(ActionEvent event) throws IOException {
-        new SwitchScene(pembayaran, "KonfirmasiPembayaran.fxml");
+        UIHelper.switchScene(pembayaran, "KonfirmasiPembayaran.fxml");
     }
 
 }
