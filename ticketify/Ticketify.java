@@ -42,8 +42,8 @@ public class Ticketify extends Application {
     private static void seedDB() {
         AcaraModel.seedAcaraTable();
         PelangganModel.seedPelangganTable();
-        PembayaranModel.seedPembayaranTable();
         TiketModel.seedTiketTable();
+        PembayaranModel.seedPembayaranTable();
     }
 
 }
