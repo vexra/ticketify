@@ -7,20 +7,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" fx:id="daftarPembelian" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="675.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="ticketify.DaftarPembelianController">
+<AnchorPane id="AnchorPane" fx:id="daftarPembelian" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ticketify.DaftarPembelianController">
    <children>
       <Label layoutX="73.0" layoutY="14.0" text="DAFTAR PEMBELIAN">
          <font>
             <Font size="48.0" />
          </font>
       </Label>
-      <TableView fx:id="listPembelian" layoutX="15.0" layoutY="91.0" prefHeight="334.0" prefWidth="552.0">
+      <TableView fx:id="listPembelian" layoutX="202.0" layoutY="91.0" prefHeight="334.0" prefWidth="191.0">
         <columns>
-          <TableColumn fx:id="colUser" editable="false" prefWidth="75.0" text="User" />
-          <TableColumn fx:id="colTiket" prefWidth="75.0" text="Jenis Tiket" />
-            <TableColumn fx:id="colHarga" prefWidth="75.0" text="Harga Tiket" />
-            <TableColumn fx:id="colKet" prefWidth="75.0" text="Keterangan" />
+            <TableColumn id="colKet" fx:id="colKet" prefWidth="75.0" text="Nama Acara" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -31,10 +27,26 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="kembali" layoutX="575.0" layoutY="196.0" mnemonicParsing="false" onAction="#kembali" text="Kembali">
+      <Button fx:id="kembali" layoutX="575.0" layoutY="196.0" mnemonicParsing="false" onAction="#kembali" text="Logout">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
+      <TableView fx:id="listUser" layoutX="14.0" layoutY="91.0" prefHeight="334.0" prefWidth="191.0">
+        <columns>
+          <TableColumn id="colUser" fx:id="colUser" prefWidth="75.0" text="User" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TableView fx:id="jenisTikets" layoutX="393.0" layoutY="91.0" prefHeight="334.0" prefWidth="172.0">
+         <columns>
+            <TableColumn id="jenisTiket" fx:id="jenisTiket" prefWidth="75.0" text="Jenis Tiket" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
    </children>
 </AnchorPane>

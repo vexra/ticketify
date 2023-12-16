@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="jenisTiket" fx:id="jenisTiket" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="ticketify.JenisTiketTransportasiController">
+<AnchorPane id="jenisTiket" fx:id="jenisTiket" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ticketify.JenisTiketTransportasiController">
    <children>
       <Label layoutX="246.0" layoutY="14.0" text="DESKRIPSI">
          <font>
@@ -39,5 +38,8 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <Label layoutX="126.0" layoutY="229.0" text="Rp. 100.000,00" />
+      <Label layoutX="262.0" layoutY="229.0" text="Rp. 250.000,00" />
+      <Label layoutX="388.0" layoutY="229.0" text="Rp. 500.000,00" />
    </children>
 </AnchorPane>

@@ -1,11 +1,13 @@
 package ticketify;
 
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import model.SwitchScene;
 
 public class PembayaranTransportController {
 
@@ -33,18 +35,19 @@ public class PembayaranTransportController {
     }
 
     @FXML
-    void bayar(ActionEvent event) {
+    void bayar(ActionEvent event) throws IOException {
+        new SwitchScene(pembayaran, "KonfirmasiPembayaran.fxml");
+    }
+
+    @FXML
+    void ewallet(ActionEvent event) throws IOException {
 
     }
 
     @FXML
-    void ewallet(ActionEvent event) {
+    void kembali(ActionEvent event) throws IOException {
 
-    }
-
-    @FXML
-    void kembali(ActionEvent event) {
-
+        new SwitchScene(pembayaran, "KonfirmasiPembayaran.fxml");
     }
 
 }

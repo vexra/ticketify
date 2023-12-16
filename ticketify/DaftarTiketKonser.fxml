@@ -19,6 +19,7 @@
           <TableColumn fx:id="nama" prefWidth="131.0" text="Nama" />
             <TableColumn fx:id="jadwal" prefWidth="136.0" text="Jadwal" />
             <TableColumn fx:id="lokasi" prefWidth="155.0" text="Lokasi" />
+            <TableColumn id="acara" fx:id="acara" prefWidth="75.0" text="id_acara" visible="false" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

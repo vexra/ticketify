@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="menuTiket" fx:id="menuTiket" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="ticketify.MenuTiketController">
+<AnchorPane id="menuTiket" fx:id="menuTiket" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ticketify.MenuTiketController">
    <children>
       <Label layoutX="242.0" layoutY="25.0" text="TIKET">
          <font>
@@ -21,6 +20,11 @@
       <Button fx:id="transportasi" layoutX="219.0" layoutY="214.0" mnemonicParsing="false" onAction="#transportBtn" text="Transportasi">
          <font>
             <Font size="24.0" />
+         </font>
+      </Button>
+      <Button id="Logout" fx:id="Logout" layoutX="505.0" layoutY="347.0" mnemonicParsing="false" onAction="#logout" text="Logout">
+         <font>
+            <Font size="18.0" />
          </font>
       </Button>
    </children>

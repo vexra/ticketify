@@ -35,18 +35,21 @@ public class JenisTiketTransportasiController {
     private Label namaTiket;
 
     @FXML
-    void bisnis(ActionEvent event) {
+    void bisnis(ActionEvent event) throws IOException {
 
+        new SwitchScene(jenisTiket, "PembayaranTransport.fxml");
     }
 
     @FXML
-    void ekonomi(ActionEvent event) {
+    void ekonomi(ActionEvent event) throws IOException {
 
+        new SwitchScene(jenisTiket, "PembayaranTransport.fxml");
     }
 
     @FXML
-    void eksekutif(ActionEvent event) {
+    void eksekutif(ActionEvent event) throws IOException {
 
+        new SwitchScene(jenisTiket, "PembayaranTransport.fxml");
     }
 
     @FXML

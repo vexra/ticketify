@@ -12,6 +12,8 @@ import db.DBHelper;
 import components.Acara;
 
 import java.time.LocalDateTime;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class AcaraModel {
     private final Connection CONN;
@@ -71,9 +73,10 @@ public class AcaraModel {
         }
     }
     
-    public ArrayList<Acara> getAcara() {
-        String query = "SELECT * FROM `Acara`";
-        ArrayList<Acara> listAcara = new ArrayList<>();
+    public ObservableList<Acara> getAcara(String kt) {
+        char c = '%';
+        String query = String.format("SELECT * FROM `acara` WHERE IF('%s' = 'both', jenis_acara LIKE '%c', IF('%s' = 'konser', jenis_acara = 'konser',0)) OR IF('%s' = 'transportasi', jenis_acara != 'konser',0 );",kt,c,kt,kt);
+        ObservableList<Acara> listAcara = FXCollections.observableArrayList();
         
         try {
             ResultSet rs = CONN.createStatement().executeQuery(query);
@@ -85,7 +88,6 @@ public class AcaraModel {
         } catch (SQLException ex) {
             Logger.getLogger(AcaraModel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
         
         return listAcara;
     }

@@ -40,18 +40,21 @@ public class JenisTiketKonserController {
     }
 
     @FXML
-    void reguler(ActionEvent event) {
-
+    void reguler(ActionEvent event) throws IOException {
+        
+        new SwitchScene(jenisTiket, "KonfirmasiPembayaran.fxml");
     }
 
     @FXML
-    void vip(ActionEvent event) {
-
+    void vip(ActionEvent event) throws IOException {
+        
+        new SwitchScene(jenisTiket, "KonfirmasiPembayaran.fxml");
     }
 
     @FXML
-    void vvip(ActionEvent event) {
-
+    void vvip(ActionEvent event) throws IOException {
+        
+        new SwitchScene(jenisTiket, "KonfirmasiPembayaran.fxml");
     }
 
 }

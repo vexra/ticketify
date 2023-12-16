@@ -10,6 +10,9 @@ import model.SwitchScene;
 public class MenuTiketController {
 
     @FXML
+    private Button Logout;
+
+    @FXML
     private Button konser;
 
     @FXML
@@ -21,6 +24,11 @@ public class MenuTiketController {
     @FXML
     void konserBtn(ActionEvent event) throws IOException {
         new SwitchScene(menuTiket, "DaftarTiketKonser.fxml");
+    }
+
+    @FXML
+    void logout(ActionEvent event) throws IOException {
+        new SwitchScene(menuTiket, "Login.fxml");
     }
 
     @FXML
