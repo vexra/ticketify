@@ -25,8 +25,7 @@ public class Tiket {
     public Tiket(int id, int idAcara, String jenis, double harga, int jumlah) {
         this(id, jenis, harga, jumlah, null);
         
-        AcaraModel acaraModel = new AcaraModel();
-        this.acara = acaraModel.getAcaraById(idAcara);
+        this.acara = AcaraModel.getAcaraById(idAcara);
     }
 
     public Tiket(int id, String jenis, double harga, int jumlah, Acara acara) {

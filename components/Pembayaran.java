@@ -28,11 +28,8 @@ public class Pembayaran {
     public Pembayaran(int id, int idPelanggan, int idTiket, double totalBiaya, String kodeUnik, String metode, String status) {
         this(id, totalBiaya, kodeUnik, metode, status, null, null);
         
-        PelangganModel pelangganModel = new PelangganModel();
-        TiketModel tiketModel = new TiketModel();
-        
-        this.pelanggan = pelangganModel.getPelangganById(idPelanggan);
-        this.tiket = tiketModel.getTiketById(idTiket);
+        this.pelanggan = PelangganModel.getPelangganById(idPelanggan);
+        this.tiket = TiketModel.getTiketById(idTiket);
     }
 
     public Pembayaran(int id, double totalBiaya, String kodeUnik, String metode, String status, Pelanggan pelanggan, Tiket tiket) {
